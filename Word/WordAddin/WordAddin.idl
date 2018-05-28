@@ -1,0 +1,39 @@
+// WordAddin.idl 
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(56F98A10-B461-4A50-AE87-092F01449E69),
+	version(1.0),
+	helpstring("WordAddin 1.0 Type Library")
+]
+library WordAddinLib
+{
+	importlib("stdole2.tlb");
+
+	[
+		uuid(0c32bb29-be62-4db8-b700-85ef29b56830),
+		helpstring("ConnectProxy Class")
+	]
+	coclass ConnectProxy
+	{
+		[default] interface IUnknown;
+	};
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

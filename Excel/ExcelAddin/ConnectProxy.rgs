@@ -1,0 +1,49 @@
+HKCR
+{
+	_CDMNext.ExcelAddin = s 'Connect Class'
+	{
+		CLSID = s '{7f85420b-adc1-4398-92f6-cba2c24d5280}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove '{7f85420b-adc1-4398-92f6-cba2c24d5280}' = s '_CDMNext.ExcelAddin'
+		{
+			ProgID = s '_CDMNext.ExcelAddin'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			Programmable
+		}
+	}
+}
+
+HKCU
+{
+	NoRemove Software
+	{
+		NoRemove Microsoft
+		{
+			NoRemove Office
+			{
+				NoRemove Excel
+				{
+					NoRemove Addins
+					{
+						ForceRemove _CDMNext.ExcelAddin
+						{
+							val 'Description' = s 'This Addin provides access to CEIC Data Services'
+							val 'FriendlyName' = s 'Excel Addin for CDMNext'
+							val 'LoadBehavior' = d 3
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+

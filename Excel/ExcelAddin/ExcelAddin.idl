@@ -1,0 +1,39 @@
+// ExcelAddin.idl 
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(EAF321C9-4043-4EC3-929F-CA3E1346A0BA),
+	version(1.0),
+	helpstring("ExcelAddin 1.0 Type Library")
+]
+library ExcelAddinLib
+{
+	importlib("stdole2.tlb");
+
+	[
+		uuid(7f85420b-adc1-4398-92f6-cba2c24d5280),
+		helpstring("ConnectProxy Class")
+	]
+	coclass ConnectProxy
+	{
+		[default] interface IUnknown;
+	};
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

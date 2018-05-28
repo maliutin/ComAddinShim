@@ -1,0 +1,49 @@
+HKCR
+{
+	_CDMNext.WordAddin = s 'Connect Class'
+	{
+		CLSID = s '{0c32bb29-be62-4db8-b700-85ef29b56830}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove '{0c32bb29-be62-4db8-b700-85ef29b56830}' = s '_CDMNext.WordAddin'
+		{
+			ProgID = s '_CDMNext.WordAddin'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			
+		}
+	}
+}
+
+HKCU
+{
+	NoRemove Software
+	{
+		NoRemove Microsoft
+		{
+			NoRemove Office
+			{
+				NoRemove Word
+				{
+					NoRemove Addins
+					{
+						ForceRemove _CDMNext.WordAddin
+						{
+							val 'Description' = s 'This Addin provides access to CEIC Data Services.'
+							val 'FriendlyName' = s 'Word Addin for CDMNext'
+							val 'LoadBehavior' = d 3
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
